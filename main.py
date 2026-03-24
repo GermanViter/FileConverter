@@ -12,7 +12,7 @@ if not os.path.exists(filePath):
 lines = []
 lineCount = 0
 words = []
-
+nbrKeys = 0
 
 
 
@@ -22,7 +22,11 @@ with open(filePath, "r") as f:
         if lineCount == 0:
             for i in values:
                 words.append(i)
+                nbrKeys += 1
         else:
+            if len(values) < nbrKeys:
+                print("Error : The number of values is less than the number of keys")
+                sys.exit(1)
             wordCount = 0
             dict1 = {}
             for word in values:
@@ -30,7 +34,7 @@ with open(filePath, "r") as f:
                     dict1.update({words[wordCount]:word})
                     wordCount += 1
                 except IndexError:
-                    print("The number of keys does not match number of values")
+                    print("Error: The number of values in line {} does not match the number of headers.".format(lineCount + 1))
                     sys.exit()
             lines.append(dict1)
         lineCount += 1
