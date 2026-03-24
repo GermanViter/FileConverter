@@ -13,6 +13,9 @@ lines = []
 lineCount = 0
 words = []
 
+
+
+
 with open(filePath, "r") as f:
     for line in f:
         values = line.strip().split(',')
@@ -23,11 +26,17 @@ with open(filePath, "r") as f:
             wordCount = 0
             dict1 = {}
             for word in values:
-                dict1.update({words[wordCount]:word})
-                wordCount += 1
+                try:
+                    dict1.update({words[wordCount]:word})
+                    wordCount += 1
+                except IndexError:
+                    print("The number of keys does not match number of values")
+                    sys.exit()
             lines.append(dict1)
         lineCount += 1
 
 with open(jsonFilePath, "w") as js:
     json.dump(lines, js, indent=4)
 
+
+print("Data has been successfully converted to JSON format and saved to the specified file.")
