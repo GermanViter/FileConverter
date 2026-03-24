@@ -1,0 +1,52 @@
+[
+    {
+        "nom": "iPhone 12",
+        "marque": "Apple",
+        "prix": "799"
+    },
+    {
+        "nom": "Galaxy S21",
+        "marque": "Samsung",
+        "prix": "999"
+    },
+    {
+        "nom": "Pixel 5",
+        "marque": "Google",
+        "prix": "699"
+    },
+    {
+        "nom": "OnePlus 9",
+        "marque": "OnePlus",
+        "prix": "729"
+    },
+    {
+        "nom": "Xperia 1 II",
+        "marque": "Sony",
+        "prix": "1199"
+    },
+    {
+        "nom": "Mi 11",
+        "marque": "Xiaomi",
+        "prix": "749"
+    },
+    {
+        "nom": "P40 Pro",
+        "marque": "Huawei",
+        "prix": "899"
+    },
+    {
+        "nom": "Moto G Power",
+        "marque": "Motorola",
+        "prix": "249"
+    },
+    {
+        "nom": "Nokia 8.3",
+        "marque": "Nokia",
+        "prix": "699"
+    },
+    {
+        "nom": "Oppo Find X3 Pro",
+        "marque": "Oppo",
+        "prix": "1149"
+    }
+]
