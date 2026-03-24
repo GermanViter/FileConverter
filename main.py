@@ -44,7 +44,9 @@ def csvToJson():
                         sys.exit()
                 lines.append(dict1)
             lineCount += 1
-
+        if lineCount == 1 or lineCount == 0:
+            print("Error: The CSV file is empty or only contains headers.")
+            sys.exit(1)
     with open(jsonFilePath, "w") as js:
         json.dump(lines, js, indent=4)
 
