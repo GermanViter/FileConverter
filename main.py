@@ -1,6 +1,7 @@
 import os   
 import sys
 import json 
+import csv
 
 #####TODO : handle incorrect strings in the csv file (ex: "hello, world" should be considered as one value and not two),
 #####TODO : handle odd number of quotes such ass """
@@ -30,19 +31,19 @@ def csvToJson():
 
 
     with open(filePath, "r") as f:
-        for line in f:
-            values = line.strip().split(separator)
+        values = csv.reader(f, delimiter=separator)
+        for line in values:
             if lineCount == 0:
-                for i in values:
+                for i in line:
                     words.append(i)
                     nbrKeys += 1
             else:
-                if len(values) < nbrKeys:
+                if len(line) < nbrKeys:
                     print("Error : The number of values is less than the number of keys")
                     sys.exit(1)
                 wordCount = 0
                 dict1 = {}
-                for word in values:
+                for word in line:
                     try:
                         dict1.update({words[wordCount]:word})
                         wordCount += 1
