@@ -4,6 +4,7 @@ import json
 
 #####TODO : handle incorrect strings in the csv file (ex: "hello, world" should be considered as one value and not two),
 #####TODO : handle odd number of quotes such ass """
+#####TODO : json to csv
 
 def csvToJson():
     filePath = input("Enter the file path: ")
