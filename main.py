@@ -15,6 +15,11 @@ def csvToJson():
     jsonFilePath = input("Enter the jason file path : ")
     isValidJSON(jsonFilePath)   
 
+
+    separator = input("Enter the separator used in the CSV file (default is ','): ")
+    if separator == "":
+        separator = ","
+
     lines = []
     lineCount = 0
     words = []
@@ -24,7 +29,7 @@ def csvToJson():
 
     with open(filePath, "r") as f:
         for line in f:
-            values = line.strip().split(',')
+            values = line.strip().split(separator)
             if lineCount == 0:
                 for i in values:
                     words.append(i)
