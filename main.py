@@ -14,7 +14,6 @@ def csvToJson():
     jsonFilePath = input("Enter the jason file path : ")
     isValidJSON(jsonFilePath)   
 
-
     separator = input("Enter the separator used in the CSV file (default is ','): ")
     if separator == "":
         separator = ","
@@ -23,8 +22,6 @@ def csvToJson():
     lineCount = 0
     words = []
     nbrKeys = 0
-
-
 
     with open(filePath, "r") as f:
         lines = csv.reader(f, delimiter=separator)
@@ -53,12 +50,7 @@ def csvToJson():
             sys.exit(1)
     with open(jsonFilePath, "w") as js:
         json.dump(dicts, js, indent=4)
-
-
     print("Data has been successfully converted to JSON format and saved to the specified file.")
-
-
-
 
 def jsonToCsv():
     filePath = input("Enter the file path: ")
@@ -116,7 +108,6 @@ def isValidJSON(filePath):
     if not filePath.endswith('.json'):
         print("Error: Invalid file format. Please provide a .json file.")
         sys.exit(1)
-
 
 if __name__ == "__main__":
     main()
